@@ -18,7 +18,9 @@ export default class DatabaseManager {
           database: process.env.PG_DATABASE,
           entities: [__dirname + "/../**/*.entity.{js,ts}"],
           synchronize: true,
-          ssl: true,
+          ssl: {
+            rejectUnauthorized: false,
+          },
         });
       } else {
         console.log("NODE_ENV is test or development");
