@@ -2,10 +2,10 @@
   "name": "planning-web-services",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/src/index.js",
   "scripts": {
     "build": "tsc --outDir build",
-    "start": "cross-env NODE_ENV=production node build/index.js",
+    "start": "npm run build && cross-env NODE_ENV=production node build/src/index.js",
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "test": "cross-env NODE_ENV=test PORT=1234 jest --verbose --silent --forceExit --maxWorkers=1"
   },
